@@ -34,3 +34,4 @@ def test_number_list():
     assert sum_list([1,2,2,1,2,2]) == 10
 
 
+def test sum_list():
