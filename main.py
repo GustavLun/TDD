@@ -1,6 +1,7 @@
 #1.
 #1a. x<100: har bara 2 över och under
 from os import remove
+from unittest import result
 
 
 #1b. y == 42: har 2, antingen är y exakt 42 eller inte.
@@ -64,5 +65,72 @@ def find_2nd_max(list):
     # sen tar vi en variabel andra_plats som då skall vara andra elementet från höger alltså -2 vilket är de nästa största talet i en sorterad lista.
     #Finns inget tall returnas None
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+
+# 2. Öva på TDD
+
+#1A
+def c_to_f(degree):
+
+    if degree < -273.15:
+        return None
+    else:
+        return (round(degree * 9 / 5 + 32 , 2))
 
 
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+
+#2.A
+
+def count_words(sentence):
+    words = sentence.split() #
+    if len(words) == 0:
+        return None
+    else:
+        return len(words)
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+# 3.A
+def find_median(numbers):
+    numbers.sort()
+    if len(numbers) <1:
+        return None
+    elif len(numbers) > 0 and len(numbers) % 2 == 0:
+        mid1 = numbers[len(numbers)//2 - 1]
+        mid2 = numbers[len(numbers)//2]
+        median = (mid1 + mid2) / 2
+        return median
+    else:
+        median = numbers[len(numbers)//2]
+        return median
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+# 4
+
+def is_sorted_ascending(numbers):
+
+    if len(numbers) < 1:
+        return None
+    for num in range(len(numbers)-1):
+       if numbers[num] > numbers[num+1]:
+        return False
+
+    else:
+        return True
+
+master_list=("Xbox", "Ps5", "Nintendo", "PC", "Sega")
+x = input("Please enter a sentence: ")
+
+# Söka efter användare
+def autocomplete_list(input, master_list):
+    result=[]
+    for game in master_list:
+        if game.startswith(input.upper()):
+            result.append(game)
+            return result
+    print(x)
+
+print(autocomplete_list(x, master_list))
